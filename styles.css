@@ -1,0 +1,60 @@
+#header {
+    height: 50px;
+    width: 100px;
+    border: solid black 2px;
+    display: flex;
+}
+
+.library-container {
+    width: 950px;
+    border: solid black 5px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    resize: both;
+    overflow: hidden;
+}
+
+.card {
+    height: 200px;
+    width: 300px;
+    border: solid black 2px;
+}
+
+.modal {
+    height: 400px;
+    width: 400px;
+    border: solid black 2px;
+}
+
+.input-container {
+    display: flex;
+    border-bottom: solid black 2px;
+    width: 300px;
+}
+
+.notes-modal {
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid black 2px;
+    width: 300px;
+}
+
+.notes-modal #note-input {
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+
+.input-container label {
+}
+.input-container input {
+    width: 150px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}

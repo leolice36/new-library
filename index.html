@@ -13,29 +13,30 @@
 <body>
     <div id="header">
         <div>Library</div>
-        <button id="add">+</button>
+        <button id="add" onclick="openModal()">+</button>
     </div>
 
     <div class="library-container">
     </div>
 
-    <div class="modal">
-        <form action="" id="modal-form">
-            <div class="input-container"><label for="title-input">Title:</label><input type="text" id="title-input" placeholder=""></div>
-            <div class="input-container"><label for="author-input">Author:</label><input type="text" id="author-input" placeholder=""></div>
-            <div class="input-container"><label for="pages-input">No. Pages:</label><input type="number" id="pages-input" placeholder=""></div>
-            <div class="input-container"><label for="is-read">Read?</label><input type="checkbox" id="is-read" placeholder=""></div>
+    <div class="modal" onclick="closeModal()">
+
+            <form action="" id="modal-form" onclick="event.stopPropagation()">
+                <div class="input-container"><label for="title-input">Title:</label><input type="text" id="title-input" placeholder=""></div>
+                <div class="input-container"><label for="author-input">Author:</label><input type="text" id="author-input" placeholder=""></div>
+                <div class="input-container"><label for="pages-input">No. Pages:</label><input type="number" id="pages-input" placeholder=""></div>
+                <div class="input-container"><label for="is-read">Read?</label><input type="checkbox" id="is-read" placeholder=""></div>
             
-            <div class="notes-modal">
-                <label for="note-input">Notes:</label>
-                <textarea id="note-input" rows="3"></textarea>
-            </div>
-            <div id="id-modal"></div>
-            <div class="button-container">
-                <button type="submit" id="submit"  onclick="this.classList.contains('edit') ? commitEdit() : submitBook()">Submit</button>
-                <button id="delete" onclick="deleteBook()" disabled>Delete</button>
-            </div>
-         </form>
+                <div class="notes-modal">
+                    <label for="note-input">Notes:</label>
+                    <textarea id="note-input" rows="3"></textarea>
+                </div>
+                <div id="id-modal"></div>
+                <div class="button-container">
+                    <button type="submit" id="submit"  onclick="this.classList.contains('edit') ? commitEdit() : submitBook()">Submit</button>
+                    <button id="delete" onclick="deleteBook()" disabled>Delete</button>
+                </div>
+             </form>
     </div>
 
     </div>

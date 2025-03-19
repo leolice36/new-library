@@ -80,11 +80,12 @@ const myLibrary = [
             </div>
         `
         card.addEventListener("click", () => editCard(card))
+        card.addEventListener("click", () => openModal())
         return card
       }
   
         libraryContainer.appendChild(createCard());
-        document.getElementById('modal-form').reset();
+        closeModal()
         
   }
   
@@ -106,6 +107,7 @@ const myLibrary = [
         </div>
       `;
       card.addEventListener("click", () => editCard(card))
+      card.addEventListener("click", () => openModal())
       return card;
     }
   
@@ -166,6 +168,19 @@ const myLibrary = [
     document.getElementById("id-modal").textContent = '';
     submitBtn.classList.remove('edit');
     deleteBtn.classList.remove('edit');
+
+    const card = document.querySelector(`div[id-code='${idCode}']`)
+    card.innerHTML = `
+        <div class="title">${title}</div>
+        <div class="author">${author}</div>
+        <div class="pages">${pages}</div>
+        <div class="id-code">${idCode}</div>
+        <div class="notes">
+          <span>Note:</span>
+          <div class="content-notes">${note}</div>
+        </div>
+      `;
+    closeModal()
   }
   
   function getObjectfromCard(card) {
@@ -200,6 +215,7 @@ const myLibrary = [
     document.getElementById("id-modal").textContent = '';
     deleteBtn.classList.remove('edit')
     submitBtn.classList.remove('edit');
+    closeModal();
   }
   
   const deleteBtn = document.getElementById("delete");
@@ -209,3 +225,14 @@ const myLibrary = [
   document.getElementById("delete").addEventListener("click", function(event) {event.preventDefault()});
   // Observe class attribute changes
   observer.observe(deleteBtn, { attributes: true, attributeFilter: ["class"] });
+
+
+  function openModal() {
+    document.querySelector('.modal').style.display = 'block';
+  }
+  
+  function closeModal() {
+    document.querySelector('.modal').style.display = 'none';
+    document.getElementById('modal-form').reset();
+    document.getElementById("id-modal").textContent = '';
+  }

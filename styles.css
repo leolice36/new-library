@@ -20,13 +20,33 @@
     height: 200px;
     width: 300px;
     border: solid black 2px;
+    cursor: pointer;
 }
 
 .modal {
-    height: 400px;
-    width: 400px;
-    border: solid black 2px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37 30 7 / 23%);
+    
 }
+
+.modal.active {
+    display: block;
+  
+  }
+
+#form-container {
+    background-color: white;
+}
+
+#modal-form {
+    background-color: white;
+}
+
 
 .input-container {
     display: flex;

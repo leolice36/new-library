@@ -1,26 +1,120 @@
 #header {
-    height: 50px;
-    width: 100px;
-    border: solid black 2px;
     display: flex;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+#header div {
+    font-family: "Antonio", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 74.65px;
+    letter-spacing: -0.03em;
+    margin-left: 30px;
+}
+
+#add {
+    width: 39.96px;
+    height: 55px;
+    border-radius: 3px;
+    margin-bottom: 19px;
+    margin-left: 10px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 74.65px;
+    line-height: 32px;
+    padding: 0;
+    color: white;
+    background-color: black;
+    border: none;
 }
 
 .library-container {
-    width: 950px;
-    border: solid black 5px;
-    height: 600px;
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    resize: both;
+
     overflow: hidden;
 }
 
 .card {
-    height: 200px;
-    width: 300px;
-    border: solid black 2px;
+    margin-left: 35px;
+    height: 216px;
+    width: 332px;
+    border: none;
     cursor: pointer;
+    overflow: hidden;
+    border-left: 3px #B0B0B0 solid;
+}
+.card > * {
+    margin-left: 20px;
+}
+.card .title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-family: 'Antonio';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 37px;
+}
+
+.card .author {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 30px;
+    line-height: 22px;
+    margin-top: 10px;
+
+}
+
+.card .pages {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14.466px;
+    line-height: 13px;
+    margin-top: 5px;
+}
+
+.card .id-code {
+    font-family: 'Libre Barcode 128 Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 26px;
+    margin-top: 15px;
+
+}
+
+.card .notes {
+    margin-top: 20px;
+}
+.card .notes span {
+    font-family: 'Antonio';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 17.36px;
+}
+
+.card .notes .content-notes {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14.46px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: 290px;
+    line-height: 1.1;
 }
 
 .modal {
@@ -77,4 +171,8 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
+}
+
+.read {
+    border-left: #53F1C9 6px solid;
 }

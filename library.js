@@ -4,7 +4,7 @@ const myLibrary = [
       author: "J.R.R. Tolkien",
       pages: 310,
       isRead: true,
-      notes: "A great adventure novel.",
+      notes: "A great adventure novel. A great adventure novel. A great adventure novel. A great adventure novel. A great adventure novel.",
       idCode: 'af96afe0-d598-4e1f-b4cc-1c7489adf49b'
     },
     {
@@ -102,10 +102,14 @@ const myLibrary = [
         <div class="pages">${book.pages}</div>
         <div class="id-code">${book.idCode}</div>
         <div class="notes">
-          <span>Note:</span>
+          <span>Notes:</span>
           <div class="content-notes">${book.notes}</div>
         </div>
       `;
+
+      if (book.isRead){
+        card.classList.add('read');
+      }
       card.addEventListener("click", () => editCard(card))
       card.addEventListener("click", () => openModal())
       return card;
@@ -149,7 +153,7 @@ const myLibrary = [
     const title = document.getElementById("title-input").value.trim();
     const author = document.getElementById("author-input").value.trim();
     const pages = document.getElementById("pages-input").value.trim();
-    const isRead = document.getElementById("is-read").value.trim();
+    const isRead = document.getElementById("is-read").checked;
     const note = document.getElementById("note-input").value.trim();
     const idCode = document.getElementById("id-modal").textContent;
     const submitBtn = document.querySelector('#submit')
@@ -176,10 +180,15 @@ const myLibrary = [
         <div class="pages">${pages}</div>
         <div class="id-code">${idCode}</div>
         <div class="notes">
-          <span>Note:</span>
+          <span>Notes:</span>
           <div class="content-notes">${note}</div>
         </div>
       `;
+      if (isRead && !card.classList.contains('read')){
+        card.classList.add('read');
+      } else if (!isRead && card.classList.contains('read')){
+        card.classList.remove('read')
+      }
     closeModal()
   }
   

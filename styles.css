@@ -124,8 +124,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(37 30 7 / 23%);
-    
+    background-color: rgba(37, 30, 7, 0);
+    padding-top: 145px;
+    padding-left: 30px;
 }
 
 .modal.active {
@@ -139,8 +140,24 @@
 
 #modal-form {
     background-color: white;
+    padding-top: 15px;
+    padding-left: 20px;
 }
 
+#modal-form * {
+    font-family: 'Antonio';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 17.36px;
+    line-height: 26px;
+    letter-spacing: 0.1em;
+}
+
+
+
+#modal-form div {
+    margin-bottom: 10px;
+}
 
 .input-container {
     display: flex;
@@ -148,11 +165,30 @@
     width: 300px;
 }
 
+.input-container:first-child {
+    width: 553px;
+}
+
+.input-container:nth-child(2) {
+    width: 553px;
+}
+.input-container:nth-child(3) {
+    width: 140px;
+}
+
+.input-container:nth-child(4) {
+    width: 140px;
+}
+
+#is-read {
+    width: 50px;
+}
 .notes-modal {
     display: flex;
     flex-direction: column;
     border-bottom: solid black 2px;
     width: 300px;
+    height: 71px;
 }
 
 .notes-modal #note-input {
@@ -160,12 +196,13 @@
     resize: none;
     outline: none;
 }
-
-
-.input-container label {
+#pages-input {
+    width: 50px;
 }
+
 .input-container input {
     width: 150px;
+    height: 28px;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -173,6 +210,92 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.button-container {
+    position: fixed;
+    left: 533px;
+    top: 350px;
+}
+#submit {
+    height: 40px;
+    width: 80px;
+    background-color: white;
+    border: solid black 2px;
+    border-radius: 3px;
+}
+
+#delete {
+    height: 40px;
+    width: 60px;
+    background-color: black;
+    border-radius: 3px;
+    color: white;
+}
+
 .read {
     border-left: #53F1C9 6px solid;
 }
+
+
+
+#modal-form {
+    border: black solid 2px;
+    width: 664px;
+    height: 285px;
+    
+}
+
+#add.modal-show {
+    background-color: white;
+    border: black solid 2px;
+    color: black;
+}
+
+.input-container .custom-checkbox #is-read {
+    display: none;
+  }
+
+.custom-checkbox span {
+display: inline-block;
+width: 14px;
+height: 14px;
+border: 2px solid black;
+border-radius: 4px;
+margin-left: 40px;
+margin-right: 5px;
+}
+
+.custom-checkbox input:checked + span {
+    background-color: #53F1C9;
+  }
+
+#id-modal {
+font-family: 'Libre Barcode 128 Text';
+font-style: normal;
+font-weight: 400;
+}
+
+#note-input {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 12.05px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+#modal-form .input-container input {
+    font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 200;
+font-size: 19px;
+line-height: 28px;
+/* identical to box height, or 161% */
+display: flex;
+align-items: center;
+letter-spacing: 0.05em;
+}
+  

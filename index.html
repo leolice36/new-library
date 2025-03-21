@@ -25,10 +25,23 @@
     <div class="modal" onclick="closeModal()">
 
             <form action="" id="modal-form" onclick="event.stopPropagation()">
-                <div class="input-container"><label for="title-input">Title:</label><input type="text" id="title-input" placeholder=""></div>
+                <div class="input-container"><label for="title-input">Title:</label><input type="text" id="title-input" placeholder="" ></div>
                 <div class="input-container"><label for="author-input">Author:</label><input type="text" id="author-input" placeholder=""></div>
                 <div class="input-container"><label for="pages-input">No. Pages:</label><input type="number" id="pages-input" placeholder=""></div>
-                <div class="input-container"><label for="is-read">Read?</label><input type="checkbox" id="is-read" placeholder=""></div>
+                
+                <div class="input-container">
+                        
+                    <label for="is-read">Read?</label>
+                    
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="is-read" placeholder="">
+                        <span></span>
+                      </label>
+
+                      <p id="status"></p>
+                </div>
+
+                
             
                 <div class="notes-modal">
                     <label for="note-input">Notes:</label>

@@ -40,7 +40,9 @@ const myLibrary = [
       idCode: '52c541a3-ba8f-4a27-91f1-4ea987dfc7c4'
     }
   ];
-  
+  const checkbox = document.getElementById("is-read");
+  const statusText = document.getElementById("status");
+
   function Book(title, author, pages, isRead, notes = "") {
     this.title = title;
     this.author = author;
@@ -74,7 +76,7 @@ const myLibrary = [
                   <div class="pages">${pages}</div>
                   <div class="id-code">${idCode}</div>
                   <div class="notes">
-                      <span>Note:</span>
+                      <span>Notes:</span>
                       <div class="content-notes">${note}</div>
                   </div>
             </div>
@@ -109,6 +111,7 @@ const myLibrary = [
 
       if (book.isRead){
         card.classList.add('read');
+      } else {
       }
       card.addEventListener("click", () => editCard(card))
       card.addEventListener("click", () => openModal())
@@ -164,6 +167,7 @@ const myLibrary = [
     entry.author = author;
     entry.pages = pages;
     entry.isRead = isRead;
+    
     entry.notes = note;
   
     console.log(entry)
@@ -237,11 +241,40 @@ const myLibrary = [
 
 
   function openModal() {
+    const libraryContainer = document.querySelector('.library-container');
     document.querySelector('.modal').style.display = 'block';
+    changeBtn();
+    libraryContainer.style.display = 'none';
+    if (checkbox.checked){
+      statusText.textContent = "Yes";
+    } else {
+      statusText.textContent = "No";
+    }
   }
   
   function closeModal() {
+    const libraryContainer = document.querySelector('.library-container');
     document.querySelector('.modal').style.display = 'none';
     document.getElementById('modal-form').reset();
     document.getElementById("id-modal").textContent = '';
+    changeBtn();
+    libraryContainer.style.display = 'grid';
   }
+
+  function changeBtn() {
+    const modal = document.querySelector('.modal');
+    const displayValue = window.getComputedStyle(modal).getPropertyValue('display');
+    const addBtn = document.querySelector('#add')
+
+    if (displayValue == 'block') {
+      addBtn.classList.add('modal-show')
+    } else {
+      addBtn.classList.remove('modal-show')
+    }
+  }
+
+
+
+  checkbox.addEventListener("change", function () {
+    statusText.textContent = checkbox.checked ? "Yes" : "No";
+  });
